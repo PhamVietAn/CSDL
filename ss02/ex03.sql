@@ -19,12 +19,8 @@ CREATE TABLE Enrollment (
     
     PRIMARY KEY (student_id, subject_id), 
     
-    FOREIGN KEY (student_id) REFERENCES Student(student_id)
-        ON UPDATE CASCADE
-        ON DELETE CASCADE,
+    FOREIGN KEY (student_id) REFERENCES Student(student_id),
         
     FOREIGN KEY (subject_id) REFERENCES Subject(subject_id)
-        ON UPDATE CASCADE
-        ON DELETE CASCADE
 );
 

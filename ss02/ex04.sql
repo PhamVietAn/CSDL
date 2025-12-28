@@ -9,6 +9,4 @@ ADD COLUMN teacher_id VARCHAR(10);
 
 ALTER TABLE Subject
 ADD CONSTRAINT fk_teacher
-FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
-    ON UPDATE CASCADE
-    ON DELETE SET NULL;
+FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id);

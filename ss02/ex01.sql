@@ -10,6 +10,4 @@ CREATE TABLE Student (
     birthday DATE NOT NULL,                 -- Ngày sinh
     class_id VARCHAR(10),                   -- Thuộc lớp nào
     FOREIGN KEY (class_id) REFERENCES Class(class_id) 
-        ON UPDATE CASCADE
-        ON DELETE SET NULL
 );

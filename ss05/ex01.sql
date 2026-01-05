@@ -1,4 +1,3 @@
-
 CREATE DATABASE ss05;
 USE ss05;
 

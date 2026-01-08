@@ -102,3 +102,33 @@ limit 3 offset 2;
 -- Phần 3
 
 -- 11
+select a.appointment_id, p.patient_full_name, a.doctor_id, a.appointment_date
+from appointment a
+join patient p on a.patient_id = p.patient_id
+where a.appointment_status = 'Completed';
+
+-- 12
+select d.doctor_id, d.doctor_full_name, a.appointment_id
+from doctor d
+left join appointment a on d.doctor_id = a.doctor_id;
+
+
+-- 13 
+select appointment_status, count(*) `total_appointment`
+from appointment
+group by appointment_status;
+
+-- 14
+select patient_id, count(*) `count_appointment`
+from appointment
+group by patient_id
+having count(*) >= 2;
+
+-- 15
+select appointment_id, appointment_date, doctor_id
+from appointment
+where appointment_date > (
+    select avg(appointment_date)
+    from appointment
+);
+

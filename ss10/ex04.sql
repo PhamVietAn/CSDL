@@ -13,6 +13,14 @@ where user_id = 1
 create index idx_created_at_user_id
 on posts (created_at, user_id);
 
+-- truy vấn lại sau khi tạo index
+explain analyze
+select post_id, content, created_at
+from posts
+where user_id = 1
+  and created_at >= '2026-01-01'
+  and created_at <  '2027-01-01';
+
 -- truy vấn tìm user có email = 'an@gmail.com
 explain analyze
 select user_id, username, email
